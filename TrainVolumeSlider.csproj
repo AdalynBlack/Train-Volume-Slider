@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<RootNamespace>TrainVolumeSlider</RootNamespace>
+		<LangVersion>default</LangVersion>
+		<IsPackable>false</IsPackable>
+		<AssemblyVersion>0.0.0</AssemblyVersion>
+		<FileVersion>0.0.0</FileVersion>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<AssemblyName>TrainVolumeSlider</AssemblyName>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="MelonLoader">
+			<HintPath>$(FF_PATH)/MelonLoader/net6/MelonLoader.dll</HintPath>
+		</Reference>
+		<Reference Include="0Harmony">
+			<HintPath>$(FF_PATH)/MelonLoader/net6/0Harmony.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppInterop.Runtime">
+			<HintPath>$(FF_PATH)/MelonLoader/net6/Il2CppInterop.Runtime.dll</HintPath>
+		</Reference>
+		<Reference Include="Il2CppInterop.Common">
+			<HintPath>$(FF_PATH)/MelonLoader/net6/Il2CppInterop.Common.dll</HintPath>
+		</Reference>
+		<Reference Include="mscorlib">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/Il2Cppmscorlib.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/UnityEngine.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.AssetBundleModule">
+			<HintPath>$(FF_PATH)/MelonLoader/net6/UnityEngine.Il2CppAssetBundleManager.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+		<Reference Include="UnityEngine.UI">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/UnityEngine.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="VolumetricAudio">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/Il2CppVolumetricAudio.dll</HintPath>
+		</Reference>
+		<Reference Include="TMPro">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/Unity.TextMeshPro.dll</HintPath>
+		</Reference>
+		<Reference Include="fairyengine">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/Il2Cppfairyengine.dll</HintPath>
+		</Reference>
+		<Reference Include="forsakenfrontiers">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/Il2CppForsaken Frontiers.dll</HintPath>
+		</Reference>
+		<Reference Include="FishNet.Runtime">
+			<HintPath>$(FF_PATH)/MelonLoader/Il2CppAssemblies/Il2CppFishNet.Runtime.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<PropertyGroup>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="src/**" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(FF_PATH)/Mods"/>
+	</Target>
+</Project>

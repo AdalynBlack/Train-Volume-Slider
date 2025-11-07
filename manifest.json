@@ -1,0 +1,7 @@
+{
+  "name": "TrainVolumeSlider",
+  "description": "Adds a volume slider for the train so you can hear your friends",
+  "version_number": "0.0.0",
+  "dependencies": ["LavaGang-MelonLoader-0.7.1"],
+  "website_url": "https://github.com/AdalynBlack/Train-Volume-Slider"
+}
